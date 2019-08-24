@@ -1,5 +1,8 @@
 {
   "name": "petinventory",
-  "integrations": {},
-  "type": "ionic-angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "2e989b36"
 }

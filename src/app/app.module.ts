@@ -10,6 +10,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InventoryServiceProvider } from '../providers/inventory-service/inventory-service';
+import { InputDialogServiceProvider } from '../providers/input-dialog-service/input-dialog-service';
+
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { HttpClientModule } from '@angular/common/http'; // imports HTTP Client Module
+import { ImagePicker } from '@ionic-native/image-picker'; // imports Image Picker
+import { Camera } from '@ionic-native/camera'; // imports Camera
+import { Crop } from '@ionic-native/crop'; // imports Crop
 
 @NgModule({
   declarations: [
@@ -21,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, // HTTP Client Module
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -34,7 +43,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    InventoryServiceProvider,
+    InputDialogServiceProvider,
+    SocialSharing, // Social Sharing
+    ImagePicker, // Image Picker
+    Camera, // Camera
+    Crop // Crop
   ]
 })
 export class AppModule {}
